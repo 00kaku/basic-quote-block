@@ -26,7 +26,6 @@ registerBlockType( 'basic/quote-block', {
 	},
 	edit: ( { attributes, setAttributes } ) => {
 		const blockProps = useBlockProps();
-
 		return (
 			<div { ...blockProps }>
 				<h2> BASIC QUOTE BLOCK </h2>
@@ -61,17 +60,17 @@ registerBlockType( 'basic/quote-block', {
 					disableAlpha
 				/>
 				<div className="media__manager">
-					{ attributes.imageUrl && (
+					{ attributes.imgUrl && (
 						<div>
 							<img
-								src={ attributes.imageUrl }
+								src={ attributes.imgUrl }
 								style={ { width: '50px', height: '50px' } }
 								alt="Uploaded Author Pic"
 							/>
 							<Button
 								className="button"
 								onClick={ () =>
-									setAttributes( { imageUrl: null } )
+									setAttributes( { imgUrl: null } )
 								}
 							>
 								Remove Image
@@ -81,10 +80,10 @@ registerBlockType( 'basic/quote-block', {
 
 					<MediaUpload
 						onSelect={ ( img ) =>
-							setAttributes( { imageUrl: img.url } )
+							setAttributes( { imgUrl: img.url } )
 						}
 						allowedTypes={ [ 'image' ] }
-						value={ attributes.imageUrl }
+						value={ attributes.imageID }
 						render={ ( { open } ) => (
 							<Button className="button" onClick={ () => open() }>
 								Upload author image
@@ -123,7 +122,7 @@ registerBlockType( 'basic/quote-block', {
 						<div className="image">
 							<img
 								src={
-									attributes.imageUrl ||
+									attributes.imgUrl ||
 									'https://via.placeholder.com/50x50'
 								}
 								alt="Author"
