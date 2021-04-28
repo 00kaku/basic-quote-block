@@ -1,0 +1,17 @@
+.block-editor-rich-text__editable.citation.rich-text {
+	font-size: 22px;
+	font-weight: bold;
+	font-family: 'Alegreya SC, serif';
+	margin: 0 ;
+}
+
+.block-editor-rich-text__editable.author.rich-text{
+	margin-left: auto;
+	font-size: 20px;
+	font-weight: bold;
+	color: #fff;
+	font-family: 'Open Sans condensed, Arial Narrow, serif';
+	text-shadow: 2px 2px rgba(0, 0, 0, 0.5);
+	margin: 0;
+	margin-left: auto;
+}

@@ -40,7 +40,7 @@
 }
 
 
-.quote__footer__text h3{
+.quote__footer__text.citation{
 	font-size: 22px;
 	font-weight: bold;
 	font-family: 'Alegreya SC, serif';
