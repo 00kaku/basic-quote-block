@@ -5,7 +5,9 @@ import {
 	RichText,
 	InspectorControls,
 	ColorPalette,
+	MediaPlaceholder,
 } from '@wordpress/block-editor';
+import { PanelBody } from '@wordpress/components';
 import quotes from './assets/quotes.svg';
 registerBlockType( 'basic/quote-block', {
 	apiVersion: 2,
@@ -34,21 +36,22 @@ registerBlockType( 'basic/quote-block', {
 		return (
 			<div { ...blockProps }>
 				<InspectorControls key="settings">
-					<div id="controls">
-						<fieldset>
-							<legend className="blocks-base-control__label">
-								{ __( 'Theme Color', 'basic-quote-block' ) }
-							</legend>
-							<ColorPalette
-								onChange={ ( color ) =>
-									setAttributes( { color } )
-								}
-								value={ attributes.color }
-							/>
-						</fieldset>
-					</div>
+					<PanelBody title="Theme Color" initialOpen={ true }>
+						<ColorPalette
+							onChange={ ( color ) => setAttributes( { color } ) }
+							value={ attributes.color }
+						/>
+					</PanelBody>
+					<PanelBody title="Author Image" initialOpen={ false }>
+						<MediaPlaceholder
+							onSelect={ ( el ) => {
+								setAttributes( { imgUrl: el.url } );
+							} }
+							allowedTypes={ [ 'image' ] }
+							multiple={ false }
+						/>
+					</PanelBody>
 				</InspectorControls>
-				<h2>{ __( 'BASIC QUOTE BLOCK' ) }</h2>
 
 				<div
 					className="quote__header"
@@ -59,7 +62,7 @@ registerBlockType( 'basic/quote-block', {
 					<img
 						src={ quotes }
 						className="quotes__image"
-						alt="Author"
+						alt="Quote:"
 					/>
 					<RichText
 						value={ attributes.quote }
@@ -90,6 +93,38 @@ registerBlockType( 'basic/quote-block', {
 							className="author"
 						/>
 					</div>
+					<div style={ { display: 'flex' } }>
+						<div className="image__outer">
+							<div className="image">
+								<img
+									src={
+										attributes.imgUrl ||
+										'https://via.placeholder.com/50x50'
+									}
+									alt={ `Author: ${
+										attributes.author || 'Unknown'
+									}` }
+								/>
+							</div>
+						</div>
+						{ attributes.imgUrl && (
+							<button
+								style={ {
+									maxHeight: '25px',
+									background: '#ff0033',
+									border: 'none',
+									color: '#fff',
+									textAlign: 'center',
+									borderRadius: '5px',
+								} }
+								onClick={ () =>
+									setAttributes( { imgUrl: null } )
+								}
+							>
+								{ __( 'x' ) }
+							</button>
+						) }
+					</div>
 				</div>
 			</div>
 		);
@@ -107,7 +142,7 @@ registerBlockType( 'basic/quote-block', {
 					<img
 						src={ quotes }
 						className="quotes__image"
-						alt="Author"
+						alt="Quote:"
 					/>
 					<p className="quote__quote">{ attributes.quote }</p>
 				</div>
@@ -125,7 +160,9 @@ registerBlockType( 'basic/quote-block', {
 									attributes.imgUrl ||
 									'https://via.placeholder.com/50x50'
 								}
-								alt="Author"
+								alt={ `Author: ${
+									attributes.author || 'Unknown'
+								}` }
 							/>
 						</div>
 					</div>
