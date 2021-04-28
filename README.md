@@ -5,7 +5,8 @@ This is a basic gutenberg block that prints a quote along with author name, cita
 
 #### Screenshots
 EDITOR
-![Screenshot from 2021-04-28 17-40-21](https://user-images.githubusercontent.com/22026768/116401421-db94b600-a848-11eb-9af3-2154b9622ec9.png)
+![Screenshot from 2021-04-28 17-42-24](https://user-images.githubusercontent.com/22026768/116401664-1f87bb00-a849-11eb-92e5-f8d55e483ddc.png)
+
 
 
 OUTPUT
