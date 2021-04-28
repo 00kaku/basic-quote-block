@@ -144,14 +144,14 @@ registerBlockType( 'basic/quote-block', {
 						className="quotes__image"
 						alt="Quote:"
 					/>
-					<p className="quote__quote">{ attributes.quote }</p>
+					<p className="quote__quote">{ __( attributes.quote ) }</p>
 				</div>
 				<div className="quote__footer">
 					<div className="quote__footer__text">
 						<h3 style={ { color: attributes.color } }>
-							{ attributes.citation }
+							{ __( attributes.citation ) }
 						</h3>
-						<h4>{ attributes.author }</h4>
+						<h4>{ __( attributes.author ) }</h4>
 					</div>
 					<div className="image__outer">
 						<div className="image">

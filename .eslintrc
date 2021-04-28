@@ -2,6 +2,7 @@
 	"extends": [ "plugin:@wordpress/eslint-plugin/recommended" ],
 	"rules" : {
 		"react-hooks/rules-of-hooks" : "Off",
-		"import/no-unresolved" : "Off"
+		"import/no-unresolved" : "Off",
+		"@wordpress/i18n-no-variables": "off"
 		}
 }

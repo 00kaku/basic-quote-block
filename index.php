@@ -15,7 +15,7 @@
  * @return void
  */
 function enqueue_scripts() {
-	$asset_file = include plugin_dir_path( __FILE__ ) . 'build/index.asset.php';
+	$asset_file = is_readable( plugin_dir_path( __FILE__ ) . 'build/index.asset.php' ) && require plugin_dir_path( __FILE__ ) . 'build/index.asset.php';
 	wp_register_script(
 		'basic-quote-block',
 		plugins_url( 'build/index.js', __FILE__ ),
