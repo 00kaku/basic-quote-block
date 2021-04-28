@@ -2,7 +2,12 @@
 	"extends": [ "plugin:@wordpress/eslint-plugin/recommended" ],
 	"rules" : {
 		"react-hooks/rules-of-hooks" : "Off",
-		"import/no-unresolved" : "Off",
 		"@wordpress/i18n-no-variables": "off"
-		}
+		},
+	"settings": {
+		"import/core-modules": [ "@wordpress/blocks",
+			"@wordpress/i18n",
+			"@wordpress/block-editor",
+			"@wordpress/components"]
+		  }
 }
