@@ -9,6 +9,15 @@ import {
 } from '@wordpress/block-editor';
 import { PanelBody } from '@wordpress/components';
 import quotes from './assets/quotes.svg';
+
+/**
+ * The function register our block with the cofiguration passed in the second argument. The 'edit' function in the object
+ * the editor component presented to the user to make changes and the 'save' function is what will be presented on the screen.
+ * The object also has 'atttributes' object which acts as global variables that are set in edit function and diplayed in save function
+ * , also stored in database using 'setAttribute' function for persistence.
+ *
+ * @return {undefined}
+ */
 registerBlockType( 'basic/quote-block', {
 	apiVersion: 2,
 	title: __( 'Basic Quote Block' ),

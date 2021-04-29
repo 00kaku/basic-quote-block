@@ -1,12 +1,20 @@
 <?php
 /**
- * Plugin Name: Basic Quote Block
- * Description: A basic quote block.
- * Author: Akash Sharma
- * Author URI: http://github.com/00kaku
+ * Plugin Name:       Basics QUote Block Plugin
+ * Plugin URI:        https://github.com/00kaku/basic-quote-block
+ * Description:       A basic block to enter a quote block with the author name, image and the citation of the quote.
+ * Version:           1.0
+ * Requires at least: 5.2
+ * Requires PHP:      7.2
+ * Author:            Akash Sharma
+ * Author URI:        https://github.com/00kaku
+ * License:           GPL v2 or later
+ * License URI:       https://www.gnu.org/licenses/gpl-2.0.html
 
- * @package 'basic'
- * Version: 1.0
+ * @package           BasicQuoteBlock
+ * @author            Akash Sharma
+ * @copyright         2019 Akash Sharma
+ * @license           GPL-2.0-or-later
  */
 
 /**
